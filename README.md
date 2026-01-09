@@ -33,8 +33,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add your GitHub URL here]
-- Live Site URL: [Add your Vercel/Netlify URL here]
+- Solution URL: [https://github.com/BaskoroR725/10-Newsletter-sign-up-form.git]
+- Live Site URL: [https://baskoror725.github.io/10-Newsletter-sign-up-form/]
 
 ## My process
 
