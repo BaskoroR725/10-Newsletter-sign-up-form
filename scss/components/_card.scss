@@ -1,0 +1,70 @@
+@use "../abstracts/variables" as *;
+
+.newsletter-card {
+  background-color: var(--clr-neutral-white);
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 375px;
+
+  overflow: hidden;
+
+  border-radius: 1.5rem;
+
+  &__content {
+    padding: 2.5rem 1.5rem;
+  }
+
+  &__title {
+    color: var(--clr-neutral-dark-slate-grey);
+    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    line-height: 1;
+    margin-block-end: 1.5rem;
+  }
+
+  @media (min-width: 900px) {
+    flex-direction: row-reverse;
+    max-width: 930px;
+    padding: 1.5rem;
+    border-radius: 2.25rem;
+    box-shadow: 0 2rem 4rem hsla(234, 29%, 20%, 0.2);
+
+    &__content {
+      padding: 3rem;
+      flex: 1;
+    }
+
+    &__image {
+      flex: 1;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+
+.newsletter-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-block-end: 2.5rem;
+
+  li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+
+    &::before {
+      content: "";
+      flex-shrink: 0;
+      width: 21px;
+      height: 21px;
+      background-image: url("../assets/images/icon-list.svg");
+      background-repeat: no-repeat;
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "name": "10-newsletter-sign-up",
+  "version": "1.0.0",
+  "description": "![Design preview for the Newsletter sign-up form with success message coding challenge](./preview.jpg)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "sass:watch": "sass scss/main.scss dist/style.css --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "sass": "^1.97.2"
+  }
+}
