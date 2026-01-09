@@ -1,5 +1,18 @@
 @use 'abstracts/variables' as *;
+@use 'abstracts/mixins';
 @use 'base/reset';
 @use 'base/typography';
+@use 'base/footer';
 @use 'components/card';
 @use 'components/form';
+@use 'components/success';
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.newsletter-card:not(.hidden), 
+.success-card:not(.hidden) {
+  animation: fadeIn 0.5s ease forwards;
+}

@@ -41,6 +41,35 @@ ul[role=list] {
   list-style: none;
 }
 
+body {
+  font-family: var(--ff-primary);
+  color: var(--clr-neutral-charcoal-grey);
+  font-size: 1rem;
+}
+
+h1 {
+  font-weight: var(--fw-bold);
+  color: var(--clr-neutral-dark-slate-grey);
+}
+
+strong {
+  font-weight: var(--fw-bold);
+}
+
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-block: 1rem;
+  color: var(--clr-neutral-white);
+}
+.attribution a {
+  color: var(--clr-primary-tomato);
+  text-decoration: none;
+}
+.attribution a:hover {
+  text-decoration: underline;
+}
+
 .newsletter-card {
   background-color: var(--clr-neutral-white);
   display: flex;
@@ -52,11 +81,18 @@ ul[role=list] {
 }
 .newsletter-card__content {
   padding: 2.5rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+}
+.newsletter-card__content p {
+  margin-block-end: 1.5rem;
+  color: var(--clr-neutral-charcoal-grey);
 }
 .newsletter-card__title {
   color: var(--clr-neutral-dark-slate-grey);
-  font-size: clamp(2.5rem, 10vw, 3.5rem);
+  font-size: clamp(2rem, 10vw, 3rem);
   line-height: 1;
+  font-weight: var(--fw-bold);
   margin-block-end: 1.5rem;
 }
 @media (min-width: 900px) {
@@ -106,46 +142,129 @@ ul[role=list] {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
+  width: 100%;
+}
+.newsletter-form__group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  width: 100%;
 }
 .newsletter-form__label-row {
   display: flex;
   justify-content: space-between;
-  margin-bottom: 0.5rem;
+  align-items: center;
 }
 .newsletter-form__label-row label {
   font-size: 0.75rem;
   font-weight: var(--fw-bold);
   color: var(--clr-neutral-dark-slate-grey);
 }
+.newsletter-form__error {
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  color: var(--clr-primary-tomato);
+}
 .newsletter-form input {
-  padding: 1rem;
+  width: 100%;
+  padding: 1rem 1.5rem;
   border: 1px solid var(--clr-neutral-grey);
   border-radius: 0.5rem;
   outline: none;
-  transition: border-color 0.2s;
+  transition: all 0.2s ease;
+}
+.newsletter-form input::placeholder {
+  color: var(--clr-neutral-grey);
 }
 .newsletter-form input:focus {
   border-color: var(--clr-neutral-dark-slate-grey);
+  color: var(--clr-neutral-dark-slate-grey);
 }
 .newsletter-form input.error {
-  background-color: hsla(4, 100%, 67%, 0.15);
   border-color: var(--clr-primary-tomato);
+  background-color: hsla(4, 100%, 67%, 0.15);
   color: var(--clr-primary-tomato);
+  font-weight: var(--fw-bold);
 }
 
 .button {
   background-color: var(--clr-neutral-dark-slate-grey);
   color: var(--clr-neutral-white);
+  width: 100%;
   padding: 1.1rem;
   border: none;
   border-radius: 0.5rem;
   font-weight: var(--fw-bold);
+  font-family: inherit;
   cursor: pointer;
-  transition: all 0.3s;
+  transition: all 0.3s ease;
 }
 .button:hover {
   background: linear-gradient(to right, #ff527b, var(--clr-primary-tomato));
   box-shadow: 0 1rem 2rem hsla(4, 100%, 67%, 0.3);
+  transform: translateY(-2px);
+}
+.button:active {
+  transform: translateY(0);
+}
+
+.success-card {
+  background-color: var(--clr-neutral-white);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+}
+.success-card__icon {
+  margin-block-end: 2.5rem;
+  width: 64px;
+}
+.success-card__title {
+  color: var(--clr-neutral-dark-slate-grey);
+  line-height: 1;
+  margin-block-end: 1.5rem;
+  font-size: clamp(2.5rem, 8vh, 3.5rem);
+}
+.success-card__text {
+  margin-block-end: 2.5rem;
+}
+.success-card .button {
+  margin-top: auto;
+}
+@media (min-width: 900px) {
+  .success-card {
+    min-height: auto;
+    max-width: 500px;
+    border-radius: 2.25rem;
+    box-shadow: 0 2rem 4rem hsla(234, 29%, 20%, 0.2);
+  }
+  .success-card .button {
+    margin-top: 0;
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.newsletter-card, .success-card {
+  transition: opacity 0.3s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.newsletter-card:not(.hidden),
+.success-card:not(.hidden) {
+  animation: fadeIn 0.5s ease forwards;
 }
 
 /*# sourceMappingURL=style.css.map */

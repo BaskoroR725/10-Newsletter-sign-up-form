@@ -1,0 +1,14 @@
+.attribution {
+  font-size: 11px;
+  text-align: center;
+  padding-block: 1rem;
+  color: var(--clr-neutral-white);
+
+  a {
+    color: var(--clr-primary-tomato);
+    text-decoration: none;
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}

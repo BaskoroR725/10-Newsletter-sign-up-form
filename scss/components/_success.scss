@@ -1,0 +1,49 @@
+@use '../abstracts/variables' as *;
+
+.success-card{
+  background-color: var(--clr-neutral-white);
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  min-height: 100vh;
+
+  &__icon{
+    margin-block-end: 2.5rem;
+    width: 64px;
+  }
+
+  &__title{
+    color: var(--clr-neutral-dark-slate-grey);
+    line-height: 1;
+    margin-block-end: 1.5rem;
+    font-size: clamp(2.5rem, 8vh, 3.5rem);
+  }
+
+  &__text{
+    margin-block-end: 2.5rem;
+  }
+
+  .button{
+    margin-top: auto;
+  }
+
+  @media (min-width: 900px){
+    min-height: auto;
+    max-width: 500px;
+    border-radius: 2.25rem;
+    box-shadow: 0 2rem 4rem hsla(234, 29%, 20%, 0.2);
+
+    .button{
+      margin-top: 0;
+    }
+  }
+}
+
+.hidden {
+  display: none ;
+}
+
+.newsletter-card, .success-card {
+  transition: opacity 0.3s ease-in-out;
+}

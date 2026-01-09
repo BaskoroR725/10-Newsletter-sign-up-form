@@ -13,12 +13,20 @@
 
   &__content {
     padding: 2.5rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+
+    p {
+      margin-block-end: 1.5rem;
+      color: var(--clr-neutral-charcoal-grey);
+    }
   }
 
   &__title {
     color: var(--clr-neutral-dark-slate-grey);
-    font-size: clamp(2.5rem, 10vw, 3.5rem);
+    font-size: clamp(2rem, 10vw, 3rem);
     line-height: 1;
+    font-weight: var(--fw-bold);
     margin-block-end: 1.5rem;
   }
 
